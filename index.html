@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101016">
+  <meta name="description" content="Preview and save a publicly accessible Instagram profile image using its direct image URL.">
+  <title>Hydra Viewer — Instagram DP Downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Hydra Viewer home"><span class="brand-mark" aria-hidden="true">H</span><span>hydra<span class="brand-light">viewer</span></span></a>
+    <span class="privacy-pill"><span class="privacy-dot"></span> Private by design</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow"><span class="eyebrow-line"></span> SIMPLE. PRIVATE. IN YOUR BROWSER.</div>
+      <h1 id="page-title">A closer look.<br><span>No extra noise.</span></h1>
+      <p class="intro">Preview and save a public Instagram profile photo with its direct image link. No account, no uploads, no tracking.</p>
+
+      <section class="tool-card" aria-label="Profile image downloader">
+        <form id="image-form" novalidate>
+          <label for="image-url">Public profile image URL</label>
+          <div class="input-row">
+            <div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3A5 5 0 0 0 13 2.93l-1.72 1.71m2.72 6.36a5 5 0 0 0-7.07 0l-3 3A5 5 0 0 0 11 21.07l1.71-1.71"/></svg><input id="image-url" name="image-url" type="url" inputmode="url" placeholder="https://…/profile-image.jpg" autocomplete="url" required></div>
+            <button class="preview-button" type="submit">Preview image <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="hint">Paste a direct image link, not an Instagram profile-page link.</p>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div id="result" class="result" hidden>
+          <div class="result-heading"><span>IMAGE PREVIEW</span><button id="clear-button" class="text-button" type="button">Clear</button></div>
+          <div class="preview-area"><img id="preview" alt="Preview of the public profile image" hidden><div id="empty-preview" class="empty-preview"><span class="image-symbol" aria-hidden="true">◎</span><span>Your image preview will appear here</span></div></div>
+          <div class="image-actions"><div class="image-meta"><span class="meta-label">SOURCE</span><span id="source-label" class="source-label">Direct image URL</span></div><button id="download-button" class="download-button" type="button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>Download image</button></div>
+        </div>
+      </section>
+
+      <div class="how-it-works"><div class="section-label">HOW IT WORKS</div><div class="steps"><article class="step"><span class="step-number">01</span><h2>Get a direct link</h2><p>Use a publicly accessible image URL you already have permission to access.</p></article><article class="step"><span class="step-number">02</span><h2>Preview it here</h2><p>The image loads directly in your browser. We don’t upload or store it.</p></article><article class="step"><span class="step-number">03</span><h2>Save your copy</h2><p>Download the image when the source host allows it.</p></article></div></div>
+      <p class="disclaimer"><strong>Heads up:</strong> This tool does not look up profile pages, access private accounts, or bypass Instagram restrictions. Use only public images you’re allowed to save. If a host blocks downloads, open the image in a new tab and use your browser’s save option.</p>
+    </section>
+  </main>
+  <footer><span>HYDRA VIEWER</span><span>Images stay between you and their source.</span></footer>
+</body>
+</html>
